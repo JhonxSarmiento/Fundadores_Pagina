@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #0f0705; /* Texto negro profundo */
+    display: flex;
+    height: 100vh;
+}
+
+#calendar {
+    width: 100%;
+    height: 100%; /* Asegura que el calendario ocupe todo el espacio disponible */
+}
+
+/* Menú lateral izquierdo */
+.menu {
+    width: 250px;
+    background-color: #0F0E05; /* Fondo negro profundo */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu h2 {
+    color: #96D71D; /* Título verde claro */
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 15px 0;
+}
+
+.menu ul li a {
+    color: #FFFFFF; /* Enlaces blancos */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #96D71D; /* Cambia el color del enlace al pasar el mouse */
+}
+
+/* Contenedor principal (calendario) */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #FFFFFF; /* Fondo blanco */
+}
+
+/* Estilo personalizado para FullCalendar */
+.fc {
+    font-size: 14px;
+}
+
+.fc-daygrid-day-top {
+    color: #0F0E05; /* Texto negro profundo */
+}
+
+.fc-daygrid-day-number {
+    color: #E32A00; /* Números de día en rojo vibrante */
+}
+
+.fc-event-title {
+    color: #FFFFFF; /* Texto de eventos en blanco */
+}
+
+.fc-event {
+    background-color: #96D71D; /* Color de fondo de los eventos */
+    border: none;
+}
+
+.submenu {
+    display: none; /* El submenú está oculto por defecto */
+    padding-left: 20px; /* Añade un pequeño desplazamiento para diferenciar el submenú */
+}
+
+.submenu li {
+    margin: 7px ;
+}
+
+.submenu li a {
+    font-size: 8px;
+    padding-left: 20px; /* Tab adicional para los elementos del submenú */
+
+}
+
+/* Estilo para cuando el submenú está visible */
+.show-submenu .submenu {
+    display: block; /* Muestra el submenú cuando la clase show-submenu es añadida */
+}
+
+/* Flecha para el menú desplegable */
+.arrow {
+    font-size: 12px;
+    margin-left: 5px; /* Espaciado entre el texto y la flecha */
+}
+
+/* Estilo para cuando el submenú está visible */
+.show-submenu .submenu {
+    display: block; /* Muestra el submenú cuando la clase show-submenu es añadida */
+}
+
+* {
+    box-sizing: border-box;
+}
+

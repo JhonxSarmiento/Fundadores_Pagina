@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgba(107,2,2,1) 0%, rgba(143,18,26,1) 53%, rgba(252,204,0,1) 100%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: brown;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.nav-link:hover {
+    color: #f1c40f;
+}
+
+/* Submenús */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8B0000; /* Color marrón oscuro */
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submenu li {
+    padding: 0.5rem;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #A52A2A; /* Color marrón claro */
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+/* Menú hamburguesa (oculto por defecto) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Estilos responsive para el header */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        flex-direction: column;
+        background-color: brown;
+        width: 50%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+        background-color: #8B0000;
+    }
+
+    .nav-item:hover .submenu {
+        display: none;
+    }
+
+    .nav-item.active .submenu {
+        display: block;
+    }
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    max-width: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.enlace {
+    text-decoration: none;
+    color: white;
+}
+/* === Animaciones para listas y submenús === */
+
+/*  Animación al mostrar submenús */
+.nav-item .submenu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    display: block; 
+}
+
+.nav-item:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto hover en items de lista */
+.nav-link {
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #FFD700 !important; /* Amarillo institucional */
+    transform: translateX(5px);
+}
+
+.submenu li a {
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.submenu li a:hover {
+    opacity: 1;
+    background: rgba(139, 0, 0, 0.3) !important; /* Fondo rojo vino suave */
+    transform: translateX(8px);
+}
+
+/*Animación al cargar los items */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.nav-item {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Retrasos para cada item */
+.nav-item:nth-child(1) { animation-delay: 0.1s; }
+.nav-item:nth-child(2) { animation-delay: 0.2s; }
+.nav-item:nth-child(3) { animation-delay: 0.3s; }
+.nav-item:nth-child(4) { animation-delay: 0.4s; }
+.nav-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 1. Fija la jerarquía de capas */
+.header {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.submenu {
+    z-index: 1000;
+}
+
+.carousel {
+    position: relative;
+    z-index: 1;
+}
+/* === Animación para botón de regreso === */
+.header .logo a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.header .logo a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Brillo dorado */
+}
+
+.header .logo a:active {
+    transform: scale(0.98);
+}
