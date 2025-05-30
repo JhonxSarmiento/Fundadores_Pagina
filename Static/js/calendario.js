@@ -1,13 +1,21 @@
+// Espera a que el DOM esté completamente cargado antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
 
+    // Crea una nueva instancia del calendario usando FullCalendar
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth', // Vista inicial: mes
+        // Vista inicial del calendario (mes)
+        initialView: 'dayGridMonth',
+        // Configuración de la barra de herramientas superior (botones de navegación y vistas)
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
+        // ===============================
+        // LISTA DE EVENTOS DEL CALENDARIO
+        // ===============================
+        // Eventos que se mostrarán en el calendario
         events: [
             {
                 title: 'Expofitness',
@@ -42,17 +50,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 end: '2025-09-07T16:00:00',
                 url: 'https://maratonmedellin.com/',
             },
+            // Ejemplo de evento comentado
             // {
             //     title: 'Maratón Medellín',
             //     start: '2025-09-07',
             //     url: 'https://maratonmedellin.com/',
             // }
         ],
+        // ===============================
+        // CONFIGURACIÓN DE ESTILO Y LOCALIZACIÓN
+        // ===============================
         eventColor: '#96D71D', // Color de fondo de los eventos
         eventTextColor: '#FFFFFF', // Color del texto de los eventos
-        locale: 'es', // Configuración del idioma en español
-          // Traducir los textos del menú
-          buttonText: {
+        locale: 'es', // Idioma del calendario (español)
+        // Traducción de los textos de los botones del calendario
+        buttonText: {
             prev: 'Anterior',
             next: 'Siguiente',
             today: 'Hoy',
@@ -63,20 +75,25 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+    // Renderiza el calendario en la página
     calendar.render();
 });
 
-// Obtener el elemento de "Escenarios Deportivos"
+
+// ===============================
+// MANEJO DEL SUBMENÚ "ESCENARIOS DEPORTIVOS"
+// ===============================
+
+// Obtiene el elemento del menú que despliega el submenú (debe tener la clase .submenu-toggle)
 const escenarioLink = document.querySelector('.submenu-toggle');
     
-// Añadir un event listener para el clic
+// Añade un listener para el evento click en el enlace del submenú
 escenarioLink.addEventListener('click', function (e) {
-    e.preventDefault(); // Evitar el comportamiento por defecto (navegación)
+    e.preventDefault(); // Evita que el enlace navegue a otra página
     
-// Obtener el <li> padre para alternar la clase show-submenu
- const parentLi = escenarioLink.parentElement;
+    // Obtiene el elemento <li> padre para alternar la clase que muestra el submenú
+    const parentLi = escenarioLink.parentElement;
 
-// Alternar la clase show-submenu
-parentLi.classList.toggle('show-submenu');
-    
+    // Alterna la clase 'show-submenu' para mostrar u ocultar el submenú
+    parentLi.classList.toggle('show-submenu');
 });
