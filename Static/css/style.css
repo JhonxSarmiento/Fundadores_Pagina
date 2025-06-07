@@ -13,22 +13,6 @@ body {
 /* =========================
    CARRUSEL Y MINIATURAS
    ========================= */
-
-/* Difuminado en la parte inferior del carrusel para transición suave */
-.carousel::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 80px;
-    pointer-events: none;
-    z-index: 10;
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.7) 80%,
-        #fff 100%
-    );
-}
 /* Enlaces sin subrayado */
 a{
     text-decoration: none;
@@ -36,7 +20,6 @@ a{
 /* =========================
    HEADER Y NAVEGACIÓN
    ========================= */
-/* Estilos del header */
 header{
     width: 1140px;
     max-width: 80%;
@@ -122,7 +105,7 @@ header a{
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 70%;
     width: max-content;
     z-index: 100;
     display: flex;
@@ -146,6 +129,7 @@ header a{
     bottom: 10px;
     left: 10px;
     right: 10px;
+    
 }
 .thumbnail .item .content .title{
     font-weight: 500;
@@ -195,8 +179,6 @@ button:hover{
 /* =========================
    ANIMACIONES DEL CARRUSEL
    ========================= */
-
-/* Animación de aparición de contenido en el primer item */
 .carousel .list .item:nth-child(1){
     z-index: 1;
 }
@@ -209,7 +191,7 @@ button:hover{
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
+    animation: showContent 0.3s 0.2s linear 1 forwards;
 }
 @keyframes showContent{
     to{
@@ -218,20 +200,20 @@ button:hover{
         opacity: 1;
     }
 }
+/* DELAYS MÁS RÁPIDOS */
 .carousel .list .item:nth-child(1) .content .title{
-    animation-delay: 1.2s!important;
+    animation-delay: 0.4s!important;
 }
 .carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1.4s!important;
+    animation-delay: 0.6s!important;
 }
 .carousel .list .item:nth-child(1) .content .des{
-    animation-delay: 1.6s!important;
+    animation-delay: 0.8s!important;
 }
 .carousel .list .item:nth-child(1) .content .buttons{
-    animation-delay: 1.8s!important;
+    animation-delay: 1s!important;
 }
 
-/* Animación de imagen al avanzar */
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
     height: 220px;
@@ -271,7 +253,6 @@ button:hover{
         transform: translateX(150px);
     }
 }
-/* Barra de tiempo del carrusel */
 .carousel .time{
     position: absolute;
     z-index: 1000;
@@ -289,7 +270,6 @@ button:hover{
     from{ width: 100%}
     to{width: 0}
 }
-/* Animación al retroceder */
 .carousel.prev .list .item:nth-child(2){
     z-index: 2;
 }
@@ -332,7 +312,6 @@ button:hover{
         opacity: 0;
     }
 }
-/* Responsive para el carrusel */
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
@@ -344,8 +323,6 @@ button:hover{
 /* ========================
    ESTILOS DE ITEMS Y MINIATURAS
    ========================= */
-
-/* Fondo y bordes de los items del carrusel */
 .item {
     background-color: #0F0E05;
     padding: none;
@@ -355,22 +332,18 @@ button:hover{
     position: absolute;
     inset: 0 0 0 0;
 }
-/* Imagen de fondo de los items */
 .imagen1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 50%;
 }
-/* Hover para master */
 .master:hover{
     border-radius: 10px;
 }
 /* =========================
    TEMA OSCURO
    ========================= */
-
-/* Tema oscuro para el body y el carrusel */
 .dark-theme {
     background-color: #0F0E05;
     color: #E3E2A0;
@@ -382,8 +355,6 @@ button:hover{
 /* =========================
    EFECTOS HOVER EN MINIATURAS
    ========================= */
-
-/* Efecto hover avanzado para thumbnails */
 .thumbnail .item {
     transition: all 0.4s ease;
     position: relative;
@@ -408,7 +379,6 @@ button:hover{
 /* =========================
    NOTIFICACIÓN EMERGENTE
    ========================= */
-/* Estilos para notificación emergente */
 .notification {
     position: fixed;
     bottom: 20px;
@@ -425,11 +395,9 @@ button:hover{
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
 }
-
 /* =========================
    BOTÓN MASTER (LOGIN)
    ========================= */
-/* Botón especial para Master2000 */
 nav a[target="_blank"] {
     padding: 12px 24px;
     background-color: #8B0000;
@@ -459,19 +427,15 @@ nav a[target="_blank"]:active {
 /* =========================
    OTROS AJUSTES
    ========================= */
-/* Ajuste para descripción */
 .des {
     margin-right: 200px;
 }
 /* =========================
    BOTONES INSTITUCIONALES Y SUBMENÚS
    ========================= */
-
-/* Dropdown institucional: contexto de posicionamiento */
 .dropdown {
   position: relative;
 }
-/* Submenú oculto por defecto */
 .submenu {
   display: none;
   position: absolute;
@@ -491,12 +455,10 @@ nav a[target="_blank"]:active {
 .submenu a:hover {
   background: #f0f0f0;
 }
-/* Mostrar submenú al pasar el mouse */
 .dropdown:hover .submenu,
 .dropdown:focus-within .submenu {
   display: block;
 }
-/* Limita el ancho de los botones en columnas */
 .top-bar .column {
   min-width: 0;
   max-width: 100%;
@@ -505,7 +467,6 @@ nav a[target="_blank"]:active {
 .top-bar .dropdown {
   width: 100%;
 }
-/* Asegura que cada dropdown tenga contexto de posicionamiento */
 .top-bar .column,
 .top-bar .dropdown {
   position: relative;
@@ -514,7 +475,6 @@ nav a[target="_blank"]:active {
 /* =========================
    CORRECCIÓN DE FLEX EN BOTONES INSTITUCIONALES
    ========================= */
-/* Hace que los botones no se estiren verticalmente */
 .top-bar.row {
   display: flex;
   flex-direction: column;
@@ -523,4 +483,8 @@ nav a[target="_blank"]:active {
 }
 .top-bar.row .column {
   flex: none;
+}
+/* Color especial para el título de Media Técnica */
+.title-media-color {
+    color: rgb(108, 96, 223);
 }
