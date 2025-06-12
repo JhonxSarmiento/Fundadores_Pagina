@@ -4,11 +4,11 @@
 /* Estilos generales del body y fondo degradado institucional */
 body {
     margin: 0;
-    color: #eee;
+    color: #c90b0bc2;
     font-family: Poppins;
     font-size: 12px;
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(107,2,2,1) 0%, rgba(143,18,26,1) 53%, rgba(252,204,0,1) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 53%, rgba(255,255,255,1) 100%);
 }
 /* =========================
    CARRUSEL Y MINIATURAS
@@ -165,7 +165,7 @@ button:hover{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: rgba(243, 5, 5, 0.571);
     border: none;
     color: #fff;
     font-family: monospace;
@@ -258,7 +258,7 @@ button:hover{
     z-index: 1000;
     width: 0%;
     height: 3px;
-    background-color: #f1683a;
+    background-color: #f40909;
     left: 0;
     top: 0;
 }
@@ -395,35 +395,7 @@ button:hover{
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
 }
-/* =========================
-   BOTÓN MASTER (LOGIN)
-   ========================= */
-nav a[target="_blank"] {
-    padding: 12px 24px;
-    background-color: #8B0000;
-    color: white;
-    border: 2px solid #FFD700;;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);
-    display: inline-block;
-}
-nav a[target="_blank"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(139, 0, 0, 0.4);
-    animation: pulse 1s ease-in-out;
-}
-nav a[target="_blank"]:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.4);
-}
-@keyframes pulse {
-    0% { transform: translateY(-3px) scale(1); }
-    50% { transform: translateY(-3px) scale(1.05); }
-    100% { transform: translateY(-3px) scale(1); }
-}
+
 /* =========================
    OTROS AJUSTES
    ========================= */
