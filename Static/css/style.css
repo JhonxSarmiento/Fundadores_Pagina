@@ -73,7 +73,7 @@ header a{
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
-    font-size: 5em;
+    font-size: 620%;
     font-weight: bold;
     line-height: 1.3em;
 }
@@ -120,10 +120,10 @@ header a{
 }
 .thumbnail .item img{
     width: 100%;
-    height: 100%;
+    height: 110%;
     object-fit: cover;
     border-radius: 20px;
-}
+    transform: translateY(-10px);}
 .thumbnail .item .content{
     color: #fff;
     position: absolute;
@@ -141,16 +141,17 @@ header a{
 /* =========================
    FLECHAS DEL CARRUSEL
    ========================= */
-.arrows{
+.arrows {
     position: absolute;
-    top: 80%;
-    right: 52%;
+    top: 80%;              
+    left: 50%;         
+    transform: translateX(-50%); 
     z-index: 100;
-    width: 300px;
-    max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+
+
 }
 button{
     cursor: pointer;
@@ -161,17 +162,19 @@ button:hover{
     border-radius: 5px;
     background: linear-gradient(150deg, rgba(107,2,2,1),rgba(252,204,0,1) );
     color: white
+  
 }
 .arrows button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(243, 5, 5, 0.571);
+    background-color: transparent; 
     border: none;
     color: #fff;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
+
 }
 .arrows button:hover{
     background-color: #fff;
@@ -402,6 +405,7 @@ button:hover{
    ========================= */
 .des {
     margin-right: 200px;
+    font-size: 15px;
 }
 /* =========================
    BOTONES INSTITUCIONALES Y SUBMENÚS
@@ -459,5 +463,5 @@ button:hover{
 }
 /* Color especial para el título de Media Técnica */
 .title-media-color {
-    color: rgb(108, 96, 223);
+    color: rgb(108, 96, 223);    
 }
