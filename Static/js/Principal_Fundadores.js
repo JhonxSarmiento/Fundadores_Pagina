@@ -1,58 +1,46 @@
-// Funcionalidad del menú hamburguesa
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+// Carrusel centrado funcional
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let slideIndex = 0;
+    let autoInterval;
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Funcionalidad para submenús en móviles
-const navItems = document.querySelectorAll(".nav-item");
-
-navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-            item.classList.toggle("active");
-        }
-    });
-});
-
-// Cerrar el menú al hacer clic en un enlace
-document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-    });
-});
-
-// Funcionalidad del carrusel
-let currentIndex = 0;
-const carouselInner = document.querySelector('.carousel-inner');
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
-
-function showSlide(index) {
-    if (index >= totalItems) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = totalItems - 1;
-    } else {
-        currentIndex = index;
+    function showCarouselSlide(n) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === n);
+        });
     }
-    const offset = -currentIndex * 100;
-    carouselInner.style.transform = `translateX(${offset}%)`;
-}
 
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showCarouselSlide(slideIndex);
+    }
 
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
+    function prevSlide() {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        showCarouselSlide(slideIndex);
+    }
 
-// Opcional: Autoplay
-setInterval(nextSlide, 3000);
+    if (prevBtn && nextBtn) {
+        prevBtn.onclick = function() {
+            prevSlide();
+            resetAuto();
+        };
+        nextBtn.onclick = function() {
+            nextSlide();
+            resetAuto();
+        };
+    }
+
+    function startAuto() {
+        autoInterval = setInterval(nextSlide, 3000);
+    }
+    function resetAuto() {
+        clearInterval(autoInterval);
+        startAuto();
+    }
+
+    showCarouselSlide(slideIndex);
+    startAuto();
+});
