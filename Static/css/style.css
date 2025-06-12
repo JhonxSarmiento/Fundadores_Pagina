@@ -116,6 +116,7 @@ header a{
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    
 }
 .thumbnail .item img{
     width: 100%;
