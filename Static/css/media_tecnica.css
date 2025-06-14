@@ -1,18 +1,19 @@
+/* Contenedor principal de la sección de media técnica */
 #media-container {
     margin-top: 40px;
 }
-
+/* Distribución de los logos en una fila centrada y responsiva */
 .media-grid {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
 }
-
+/* Tarjeta individual para cada logo y su botón */
 .media-card {
     text-align: center;
 }
-
+/* Imagen del logo en la vista principal */
 .media-card img {
     width: 120px;
     height: 120px;
@@ -21,10 +22,11 @@
     margin: auto;
     transition: transform 0.2s;
 }
+/* Efecto de agrandar el logo al pasar el mouse */
 .media-card img:hover {
     transform: scale(1.08);
 }
-
+/* Botón "Ver más" debajo de cada logo */
 .media-card button {
     margin-top: 15px;
     padding: 8px 20px;
@@ -36,45 +38,46 @@
     color: #fff;
     transition: background 0.2s;
 }
+/* Efecto hover para el botón "Ver más" */
 .media-card button:hover {
     background: #1565c0;
 }
-
+/* Vista de detalle: logo grande y contenido centrado */
 .media-detalle {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
 }
-
+/* Logo grande en la vista de detalle */
 .media-detalle img {
     width: 180px;
     height: 180px;
     object-fit: contain;
     margin-bottom: 10px;
 }
-
+/* Título en la vista de detalle */
 .media-detalle h2 {
     margin: 20px 0 10px 0;
 }
-
+/* Descripción en la vista de detalle */
 .media-detalle p {
     max-width: 400px;
     text-align: center;
     font-size: 1.1rem;
 }
-
+/* Contenedor de las otras opciones en la vista de detalle */
 .media-opciones {
     display: flex;
     gap: 40px;
     margin-top: 30px;
 }
-
+/* Logos pequeños de las otras opciones */
 .media-opciones .media-card img {
     width: 80px;
     height: 80px;
 }
-
+/* Botón "Volver" en la vista de detalle */
 .media-detalle .volver-btn {
     margin-top: 30px;
     padding: 6px 18px;
@@ -86,6 +89,7 @@
     font-size: 1rem;
     transition: background 0.2s;
 }
+/* Efecto hover para el botón "Volver" */
 .media-detalle .volver-btn:hover {
     background: #444;
 }

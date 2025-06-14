@@ -11,8 +11,9 @@
 </head>
 <body>
     <a href="index.html" class="enlace"><h1>I.E. Fundadores</h1></a>
-
-    <!-- Botón Master2000 arriba, más pequeño y alineado a la izquierda -->
+    <!--
+        Botón Master2000
+    -->
     <div style="margin-bottom: 20px;">
         <a href="https://login.master2000.net/ingreso/?A=105001026697&&" target="_blank" class="expanded button primary" style="display:inline-flex; align-items:center; gap:8px; font-size:1rem; padding:8px 16px; max-width:220px;">
             <img src="img/Master2000.png" alt="Software Académico Master2000" style="max-width:28px; max-height:28px;" /> 
@@ -22,12 +23,13 @@
             </span>
         </a>
     </div>
-
-    <!-- Fila principal: columnas y carrusel -->
+    <!--
+        Fila principal: columnas de botones y carrusel en el centro
+    -->
     <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;">
-        <!-- Columna izquierda con ancho fijo -->
+        <!-- Columna izquierda con botones -->
         <div style="min-width:220px; max-width:260px; width:100%; display:flex; flex-direction:column; gap:18px;">
-            <!-- Revista -->
+            <!-- Botón Revista -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="index2.php?id=134089&idmenutipo=8078" class="expanded button success">
@@ -42,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Conéctate Digital -->
+            <!-- Botón Conéctate Digital -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="index2.php?id=108892&idmenutipo=4568" class="expanded button primary">
@@ -57,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Notifundadores -->
+            <!-- Botón Notifundadores -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="index2.php?id=136211&idmenutipo=8078" class="expanded button success">
@@ -73,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Emisora -->
+            <!-- Botón Emisora -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="https://zeno.fm/fundadores-stereo/" target="_blank" class="expanded button primary">
@@ -90,7 +92,7 @@
             </div>
         </div>
 
-        <!-- Carrusel en el centro, tamaño fijo y compacto -->
+        <!-- Carrusel en el centro -->
         <div style="flex:1; display: flex; justify-content: center;">
             <div class="carousel-center" style="max-width:420px; min-width:320px; width:100%;">
                 <button class="carousel-btn left" id="carousel-prev">&#10094;</button>
@@ -111,10 +113,9 @@
                 <button class="carousel-btn right" id="carousel-next">&#10095;</button>
             </div>
         </div>
-
-        <!-- Columna derecha con ancho fijo -->
+        <!-- Columna derecha con botones -->
         <div style="min-width:220px; max-width:260px; width:100%; display:flex; flex-direction:column; gap:18px;">
-            <!-- Proyecto Cultura Fundadores -->
+            <!-- Botón Proyecto Cultura Fundadores -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="index2.php?id=111600&idmenutipo=8078&tag=" class="button warning">
@@ -129,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <!-- PEI -->
+            <!-- Botón PEI -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="https://modulo.master2000.net/recursos/uploads/557/2022/PROYECTOEDUCATIVOINSTITUCIONALACTUALIZADO.pdf" target="_blank" class="button warning">
@@ -144,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <!-- SIEE -->
+            <!-- Botón SIEE -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="https://modulo.master2000.net/recursos/uploads/557/2024/SIEEI.EFUNDADORES2024ULTIMAACTUALIZACION.pdf" target="_blank" class="button warning">
@@ -159,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Circulares -->
+            <!-- Botón Circulares -->
             <div class="column dropdown">
                 <div class="row">
                     <a href="index2.php?id=111599&idmenutipo=8078&tag=" class="button warning">
@@ -176,13 +177,16 @@
             </div>
         </div>
     </div>
-
-    <!-- Mapa al final, más pequeño y alineado a la izquierda -->
+    <!--
+        Mapa
+    -->
     <div style="margin-top: 40px; max-width:500px;">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7932.066873578683!2d-75.616854!3d6.259326!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2e0d1e6ae43fd6db!2sIE%20Fundadores!5e0!3m2!1ses!2sus!4v1617745242477!5m2!1ses!2sus" 
             width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-
+    <!--
+        Script principal del carrusel y lógica de la página principal
+    -->
     <script src="../Static/js/Principal_Fundadores.js"></script>
 </body>
 </html>

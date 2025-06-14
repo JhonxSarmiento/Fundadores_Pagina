@@ -15,8 +15,9 @@ const tecnicas = [
         descripcion: "La media técnica en Diseño Gráfico te permite desarrollar habilidades creativas para comunicar ideas visualmente usando herramientas digitales."
     }
 ];
-
-// Renderiza la vista principal (los 3 logos)
+// ===============================
+// Renderiza la vista principal con los 3 logos y sus botones
+// ===============================
 function renderMain() {
     let html = `<div class="media-grid">`;
     tecnicas.forEach((t, i) => {
@@ -29,11 +30,13 @@ function renderMain() {
     html += `</div>`;
     document.getElementById('media-container').innerHTML = html;
 }
-
-// Renderiza la vista detalle de una técnica
+// ===============================
+// Renderiza la vista detalle de una técnica seleccionada
+// Muestra el logo grande, la descripción y las otras dos opciones debajo
+// ===============================
 function showDetalle(idx) {
     const t = tecnicas[idx];
-    // Otras opciones
+    // Genera las otras opciones (las que no están seleccionadas)
     const otras = tecnicas
         .map((o, i) => i !== idx ? `
             <div class="media-card">
@@ -53,10 +56,11 @@ function showDetalle(idx) {
         </div>
     `;
 }
-
-// Inicializa la vista principal
+// ===============================
+// Inicializa la vista principal al cargar la página
+// ===============================
 renderMain();
-
-// Hace accesibles las funciones al scope global
+// ===============================
+// Hace accesibles las funciones al scope global para que funcionen los botones
+// ===============================
 window.showDetalle = showDetalle;
-window.renderMain = renderMain;
