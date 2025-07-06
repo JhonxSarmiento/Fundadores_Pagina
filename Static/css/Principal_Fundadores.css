@@ -4,22 +4,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Fuente base y fondo institucional con degradado */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(143,18,26,1) 53%, rgba(252,204,0,1) 100%);
 }
-/* =========================
-   Header y logo principal
-   ========================= */
+
+/* Header y logo principal */
 .header 
 
 .logo h1 {
     font-size: 1.5rem;
 }
-/* =========================
-   Carrusel principal
-   ========================= */
+
+/* Carrusel principal */
 .carousel {
     position: relative;
     max-width: 50%;
@@ -66,52 +65,45 @@ body {
 .carousel-control-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* Enlaces principales */
 .enlace {
     text-decoration: none;
     color: white;
+    margin-left: 0;
 }
 
-/* =========================
-   Jerarquía de capas (z-index)
-   ========================= */
+/* Jerarquía de capas (z-index) */
 .header {
     position: relative;
     z-index: 1000;
 }
-
 .navbar {
     position: relative;
     z-index: 1000;
 }
-
 .submenu {
     z-index: 1000;
 }
-
 .carousel {
     position: relative;
     z-index: 1;
 }
-/* =========================
-   Animación para botón de regreso en el logo
-   ========================= */
+
+/* Animación para botón de regreso en el logo */
 .header .logo a {
     transition: all 0.3s ease;
     display: inline-block;
 }
-
 .header .logo a:hover {
     transform: scale(1.05);
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Brillo dorado */
 }
-
 .header .logo a:active {
     transform: scale(0.98);
 }
-/* =========================
-   Carrusel centrado personalizado
-   ========================= */
+
+/* Carrusel centrado personalizado */
 .carousel-center {  
     display: flex;
     align-items: center;
@@ -162,4 +154,152 @@ body {
 }
 .carousel-btn.right {
     margin-left: 10px;
+}
+
+/* =========================
+   Estilos base para las columnas
+   ========================= */
+.columns {
+    padding: 15px;
+    box-sizing: border-box;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+/* Tamaños responsive */
+.small-12 {
+    width: 100%;
+}
+.medium-6 {
+    width: 50%;
+}
+.large-3 {
+    width: 25%;
+}
+/* Estilos para los botones */
+.button {
+    display: block;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+.button img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button small {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+/* Colores de botones */
+.button.primary {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+.button.success {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.button.warning {
+    background: linear-gradient(135deg, #f46b45, #eea849);
+}
+/* Efectos hover */
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* Estilos para el top-bar */
+.top-bar {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/* Responsive para columnas y botones */
+@media (max-width: 768px) {
+    .medium-6, .large-3 {
+        width: 100%;
+    }
+    .float-left, .float-right {
+        float: none;
+    }
+}
+
+/* =========================
+   BOTONES INSTITUCIONALES Y SUBMENÚS
+   ========================= */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: static;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+.dropdown:hover > .submenu,
+.dropdown:focus-within > .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+.submenu a:hover {
+    background: #f0f0f0;
+}
+
+.submenu .dropdown {
+    position: relative;
+}
+
+.submenu .dropdown > a {
+    position: relative;
+    padding-right: 20px;
+}
+
+.submenu .dropdown > a::after {
+    content: '▶';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: #333;
+}
+
+.submenu .dropdown .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1001;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+/* Elimina la regla duplicada que activa el submenú anidado en hover */
+
+.submenu .dropdown .submenu a {
+    padding-left: 30px;
 }

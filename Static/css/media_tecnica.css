@@ -1,12 +1,12 @@
 /* Contenedor principal de la sección de media técnica */
 #media-container {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 /* Distribución de los logos en una fila centrada y responsiva */
 .media-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 /* Tarjeta individual para cada logo y su botón */
@@ -88,8 +88,12 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.2s;
+
 }
 /* Efecto hover para el botón "Volver" */
 .media-detalle .volver-btn:hover {
     background: #444;
+}
+.enlace {
+    margin-left: 0;
 }
