@@ -54,3 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Comienza el avance automático
     startAuto();
 });
+
+function actualizarFecha() {
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"];
+    const ahora = new Date();
+    const texto = `${dias[ahora.getDay()]}, ${ahora.getDate()} de ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+    document.getElementById('fecha-actual').textContent = texto;
+}
+actualizarFecha();
+setInterval(actualizarFecha, 60000); // Actualiza cada minuto

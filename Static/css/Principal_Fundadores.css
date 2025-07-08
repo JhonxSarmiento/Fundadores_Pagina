@@ -12,7 +12,6 @@ body {
 }
 
 /* Header y logo principal */
-.header 
 
 .logo h1 {
     font-size: 1.5rem;
@@ -236,19 +235,72 @@ body {
 }
 
 /* =========================
-   BOTONES INSTITUCIONALES Y SUBMENÚS
+   BOTONES INSTITUCIONALES Y SUBMENÚS (MODIFICADO)
    ========================= */
 .dropdown {
     position: relative;
 }
 
+/* Nuevos estilos para botones principales */
+.button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.button img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    display: block;
+}
+
+.button small {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* Mantengo los colores originales pero con nuevo diseño */
+.button.primary {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+.button.success {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.button.warning {
+    background: linear-gradient(135deg, #f46b45, #eea849);
+}
+
+/* Efecto hover actualizado */
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-color: #8f121a;
+}
+
+/* Submenús (mantengo estructura pero adapto al nuevo diseño) */
 .submenu {
     display: none;
-    position: static;
+    position: absolute;
     background: #fff;
-    min-width: 180px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    min-width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
     z-index: 1000;
+    margin-top: -5px;
 }
 
 .dropdown:hover > .submenu,
@@ -258,48 +310,55 @@ body {
 
 .submenu a {
     display: block;
-    padding: 10px 15px;
+    padding: 8px 15px;
     color: #333;
     text-decoration: none;
-}
-.submenu a:hover {
-    background: #f0f0f0;
+    transition: background 0.2s;
 }
 
+.submenu a:hover {
+    background-color: #f5f5f5;
+    color: #8f121a;
+}
+
+/* Flecha indicadora de submenú */
+.submenu-arrow {
+    margin-left: auto;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Submenús anidados */
 .submenu .dropdown {
     position: relative;
 }
 
-.submenu .dropdown > a {
-    position: relative;
-    padding-right: 20px;
-}
-
 .submenu .dropdown > a::after {
-    content: '▶';
+    content: "›";
     position: absolute;
     right: 8px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.8em;
+    font-size: 1em;
     color: #333;
 }
 
 .submenu .dropdown .submenu {
     display: none;
     position: absolute;
-    left: 0;
-    top: 100%;
+    left: 100%;
+    top: 0;
     background: #fff;
     min-width: 180px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
     z-index: 1001;
-    margin-left: 0;
-    margin-top: 0;
 }
 
-/* Elimina la regla duplicada que activa el submenú anidado en hover */
+.submenu .dropdown:hover .submenu {
+    display: block;
+}
 
 .submenu .dropdown .submenu a {
-    padding-left: 30px;
+    padding-left: 15px;
 }
