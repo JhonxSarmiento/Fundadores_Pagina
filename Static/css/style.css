@@ -8,7 +8,7 @@ body {
     font-family: Poppins;
     font-size: 12px;
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 53%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(135deg, rgb(245, 11, 11) 0%, rgb(231, 166, 24) 53%, rgb(244, 248, 2) 100%);
 }
 /* =========================
    CARRUSEL Y MINIATURAS
@@ -449,20 +449,4 @@ button:hover{
 .top-bar .dropdown {
   position: relative;
   overflow: visible;
-}
-/* =========================
-   CORRECCIÓN DE FLEX EN BOTONES INSTITUCIONALES
-   ========================= */
-.top-bar.row {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: stretch;
-}
-.top-bar.row .column {
-  flex: none;
-}
-/* Color especial para el título de Media Técnica */
-.title-media-color {
-    color: rgb(108, 96, 223);    
 }

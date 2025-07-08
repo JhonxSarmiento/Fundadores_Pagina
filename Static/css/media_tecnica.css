@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(143,18,26,1) 53%, rgba(252,204,0,1) 100%);
+}
 /* Contenedor principal de la sección de media técnica */
 #media-container {
     margin-top: 60px;
