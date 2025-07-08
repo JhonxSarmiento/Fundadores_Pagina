@@ -4,8 +4,7 @@
 /* Estilos generales del body y fondo degradado institucional */
 body {
     margin: 0;
-    padding: 0;
-    color: #df0909c2;
+    color: #c90b0bc2;
     font-family: Poppins;
     font-size: 12px;
     min-height: 100vh;
@@ -466,32 +465,4 @@ button:hover{
 /* Color especial para el título de Media Técnica */
 .title-media-color {
     color: rgb(108, 96, 223);    
-}
-.institucional-logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    background: #fff;
-    padding: 24px 0 18px 0;
-    border-top: 2px solid #eee;
-    margin-top: 30px;
-}
-
-.institucional-logos a {
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-.institucional-logos a:hover {
-    transform: scale(1.08);
-}
-
-.institucional-logos img {
-    height: 60px;
-    max-width: 120px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
 }
