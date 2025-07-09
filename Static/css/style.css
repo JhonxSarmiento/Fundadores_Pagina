@@ -17,6 +17,10 @@ body {
 a{
     text-decoration: none;
 }
+/* Color especial para el título de Media Técnica */
+.title-media-color {
+    color: rgb(108, 96, 223);    
+}
 /* =========================
    HEADER Y NAVEGACIÓN
    ========================= */

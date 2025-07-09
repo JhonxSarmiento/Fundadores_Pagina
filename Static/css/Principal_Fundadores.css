@@ -67,9 +67,20 @@ body {
 
 /* Enlaces principales */
 .enlace {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #8F121A;
+    color: #fff;
+    border: 2px solid #FCCC00;
+    border-radius: 8px;
     text-decoration: none;
-    color: white;
-    margin-left: 0;
+    font-size: 0.7rem;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+.enlace:hover {
+    background-color: #FCCC00;
+    color: #8F121A;
+    transform: scale(1.05);
 }
 
 /* Jerarquía de capas (z-index) */
@@ -373,10 +384,6 @@ body {
 }
 .top-bar.row .column {
   flex: none;
-}
-/* Color especial para el título de Media Técnica */
-.title-media-color {
-    color: rgb(108, 96, 223);    
 }
 .institucional-logos {
     display: flex;
